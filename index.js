@@ -2,8 +2,8 @@
 Name: Like a Dragon: Pirate Yakuza in Hawaii Vortex Extension
 Structure: 3rd Party Mod Manager
 Author: ChemBoy1
-Version: 0.1.3
-Date: 03/04/2025
+Version: 0.1.4
+Date: 03/12/2025
 */
 
 //Import libraries
@@ -65,8 +65,8 @@ const spec = {
     ],
     "details": {
       "steamAppId": STEAMAPP_ID,
-      "nexusPageId": GAME_ID,
-      "compatibleDownloads": ['site'],
+      //"nexusPageId": GAME_ID,
+      //"compatibleDownloads": ['site'],
     },
     "environment": {
       "SteamAPPId": STEAMAPP_ID,
@@ -276,7 +276,7 @@ async function downloadModManager(api, gameSpec) {
       //*
       //Download the mod
       const dlInfo = {
-        game: GAME_DOMAIN,
+        game: gameSpec.game.id,
         name: MOD_NAME,
       };
       const nxmUrl = `nxm://${GAME_DOMAIN}/mods/${modPageId}/files/${file.file_id}`;
